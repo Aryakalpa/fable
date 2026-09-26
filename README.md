@@ -32,8 +32,17 @@ Open [http://localhost:3000](http://localhost:3000). The catalog providers requi
 ```bash
 npm run lint
 npm run build
+npm run preview
+```
+
+## Cloudflare Workers
+
+OpenNext deploy configuration lives in `wrangler.jsonc`. Keep its top-level Worker `name` and the `WORKER_SELF_REFERENCE` service name in sync; both are currently `fable`. This explicit binding avoids Cloudflare generating a self-reference from the npm package name (`bookify`).
+
+```bash
+npm run deploy
 ```
 
 ## Stack
 
-Next.js App Router, React, TypeScript, CSS, Lucide icons, Gutendex, and Google Books API. No API key is required for the current public endpoints.
+Next.js App Router, React, TypeScript, CSS, Phosphor icons, OpenNext for Cloudflare Workers, Gutendex, Open Library, and Google Books API. No API key is required for the current public endpoints.
